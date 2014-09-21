@@ -1,0 +1,19 @@
+On your server, run:
+./server <PORT NUMBER>
+
+On your client, then you can run:
+./client <IP ADDRESS> <PORT NUMBER>
+
+Running the server opens up a listening port on localhost on the port specified.
+Running the client connects to the specified listening port on the specified IP.
+ 
+Now the client and the server play the waiting game. The client waits for a command string then it sends it to the server for processing.
+
+get <FILENAME>
+	File opened on server and sent by maxbufsize chunks. The chunks are written to a file on the other end.
+put <FILENAME>
+	File opened on client and sent by maxbufsize chunks. The chunks are written to a file on the server end.
+ls
+	popen() opens a pipe to the 'ls' process, and then it is read line by line and shot back to the client.
+exit
+	Closes the pipe.
